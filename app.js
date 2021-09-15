@@ -70,6 +70,15 @@ const createSlider = () => {
   imagesArea.style.display = 'none';
   const duration = document.getElementById('duration').value || 1000;
   // console.log('sliders', sliders);
+  if (duration < 0) {
+    alert('Please put a positive value more than 1000');
+    // history.back();
+    return;
+  }
+  // let btnBack = document.querySelector('button');
+  // btnBack.addEventListener('click', () => {
+  //   window.history.back();
+  // })
   sliders.forEach(slide => {
     let item = document.createElement('div')
     item.className = "slider-item";
